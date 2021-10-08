@@ -23,19 +23,28 @@ namespace TreehouseDefense
                     new MapLocation(7,2, map)
                     }
                 );
+            
+            Invader[] invaders = {
+                new Invader(path),
+                new Invader(path),
+                new Invader(path),
+                new Invader(path)
+            };
 
-                Invader invader = new Invader(path);
-    
-                Console.WriteLine(invader.Health);
-                invader.DecreaseHealth(10);
-                Console.WriteLine(invader.Health);
-                Console.WriteLine(invader.IsNeutralized);
-                Console.WriteLine(invader.HasScored);
-                Console.WriteLine($"{invader.Location.X}, {invader.Location.Y}");
-                invader.Move();
-                Console.WriteLine($"{invader.Location.X}, {invader.Location.Y}");
             
 
+            Tower[] towers ={
+                new Tower(new MapLocation(1,3,map)),
+                new Tower(new MapLocation(2,3,map)),
+                new Tower(new MapLocation(3,3,map))
+
+            };
+            // when creating an object you can set multipl properties like below
+            Level level = new Level(invaders){
+                Towers = towers
+            };
+            bool playerWon = level.Play();
+            Console.WriteLine("Player "+(playerWon?"won":"lost"));
             }
             catch (OutOfBoundsException ex)
             {

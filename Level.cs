@@ -13,20 +13,20 @@ namespace TreehouseDefense
 
         public bool Play()
         {
-            // run until all invaders are neutralised or an invader gets to the end of the pathStep
+
 
             int remainingInvaders = _invaders.Length;
-
+            // run until all invaders are neutralised or an invader gets to the end of the pathStep
             while (remainingInvaders > 0)
             {
-
+                // each tower has the chance to fire on invaders that
                 foreach (Tower tower in Towers)
                 {
-
+    
                     tower.FireOnInvaders(_invaders);
                 }
                 remainingInvaders = 0;
-
+                //count and move the invaders that are still active
                 foreach (Invader invader in _invaders)
                 {
 
@@ -35,7 +35,7 @@ namespace TreehouseDefense
                         invader.Move();
                         if (invader.HasScored)
                         {
-
+                            // player has lost
                             return false;
                         }
 
@@ -43,13 +43,14 @@ namespace TreehouseDefense
                     }
 
                 }
-                
+
             }
+            // player has won
             return true;
 
-            // each tower has the chance to fire on invaders that
 
-            //count and move the invaders that are still active
+
+
         }
     }
 }
