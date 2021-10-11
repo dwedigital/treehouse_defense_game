@@ -25,10 +25,11 @@ namespace TreehouseDefense
                 );
             
             Invader[] invaders = {
-                new Invader(path),
-                new Invader(path),
-                new Invader(path),
-                new Invader(path)
+                new ShieldedInvader(path),
+                new ShieldedInvader(path),
+                new FastInvader(path),
+                new StrongInvader(path),
+
             };
 
             
@@ -36,7 +37,9 @@ namespace TreehouseDefense
             Tower[] towers ={
                 new Tower(new MapLocation(1,3,map)),
                 new Tower(new MapLocation(2,3,map)),
-                new Tower(new MapLocation(3,3,map))
+                new PowerTower(new MapLocation(3,3,map)),
+                new PowerTower(new MapLocation(4,3,map)),
+                new RangeTower(new MapLocation(4,3,map))
 
             };
             // when creating an object you can set multipl properties like below

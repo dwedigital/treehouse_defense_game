@@ -13,6 +13,12 @@ namespace TreehouseDefense
             Y = y;
 
         }
+public override string ToString()
+{
+    return X + ", " + Y;
+    
+    }
+
         public int DistanceTo(int x, int y)
         {
             // int xDiff = X-x;
