@@ -18,10 +18,10 @@ namespace TreehouseDefense
         public bool IsSuccesfulShot(){
             return _random.NextDouble() <Accuracy;
         }
-        public void FireOnInvaders(Invader[] invaders)
+        public void FireOnInvaders(IInvader[] invaders)
         {
 
-            foreach (Invader invader in invaders)
+            foreach (IInvader invader in invaders)
             {
                 if(_location.InRangeOf(invader.Location,Range) && invader.IsActive){
                     System.Console.WriteLine("In range");
