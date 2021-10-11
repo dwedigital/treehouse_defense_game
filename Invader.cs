@@ -1,6 +1,6 @@
 namespace TreehouseDefense
 {
-    class Invader
+    abstract class Invader :IInvader
     {
         private readonly Path _path;
         // private readonly int _pathLength = _path.length();
